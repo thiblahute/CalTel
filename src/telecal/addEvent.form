@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="eventDescriptionLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="1" groupAlignment="1" attributes="0">
+                      <Component id="timeLabel" alignment="1" min="-2" max="-2" attributes="1"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="eventNameLabel" min="-2" max="-2" attributes="1"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="durationLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="durationDaysComboBox1" alignment="1" max="32767" attributes="1"/>
+                          <Component id="dayComboBox" alignment="1" max="32767" attributes="1"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="daysLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="durationHoursComboBox" pref="98" max="32767" attributes="1"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="hoursLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="durationMinutesComboBox" pref="74" max="32767" attributes="1"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="cancelBtn" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="minutesLabel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="acceptBtn" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="hourComboBox" min="-2" max="-2" attributes="1"/>
+                      </Group>
+                  </Group>
+                  <Component id="eventNameText" alignment="0" pref="420" max="32767" attributes="0"/>
+                  <Component id="textArea1" alignment="0" pref="420" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="eventNameLabel" max="32767" attributes="1"/>
+                  <Component id="eventNameText" min="-2" max="-2" attributes="1"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="timeLabel" alignment="0" pref="25" max="32767" attributes="1"/>
+                          <Component id="dayComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="hourComboBox" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="durationLabel" min="-2" max="-2" attributes="1"/>
+                          <Component id="durationDaysComboBox1" min="-2" max="-2" attributes="0"/>
+                          <Component id="durationHoursComboBox" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="daysLabel" min="-2" max="-2" attributes="1"/>
+                  <Component id="hoursLabel" min="-2" max="-2" attributes="1"/>
+                  <Component id="durationMinutesComboBox" min="-2" max="-2" attributes="0"/>
+                  <Component id="minutesLabel" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="eventDescriptionLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="textArea1" min="-2" pref="188" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="acceptBtn" min="-2" max="-2" attributes="0"/>
+                  <Component id="cancelBtn" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="java.awt.Label" name="eventNameLabel">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="eventNameLabel" noResource="true"/>
+        <Property name="text" type="java.lang.String" resourceKey="eventNameLabel.text"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.TextField" name="eventNameText">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="eventNameText" noResource="true"/>
+        <Property name="text" type="java.lang.String" resourceKey="eventNameText.text"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.Label" name="timeLabel">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="timeLabel" noResource="true"/>
+        <Property name="text" type="java.lang.String" resourceKey="timeLabel.text"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="dayComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Item 1"/>
+            <StringItem index="1" value="Item 2"/>
+            <StringItem index="2" value="Item 3"/>
+            <StringItem index="3" value="Item 4"/>
+          </StringArray>
+        </Property>
+        <Property name="name" type="java.lang.String" value="dayComboBox" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="hourComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="48">
+            <StringItem index="0" value="0:00 AM"/>
+            <StringItem index="1" value="0:30 AM"/>
+            <StringItem index="2" value="1:00 AM"/>
+            <StringItem index="3" value="1:30 AM"/>
+            <StringItem index="4" value="2:00 AM"/>
+            <StringItem index="5" value="2:30 AM"/>
+            <StringItem index="6" value="3:00 AM"/>
+            <StringItem index="7" value="3:30 AM"/>
+            <StringItem index="8" value="4:00 AM"/>
+            <StringItem index="9" value="4:30 AM"/>
+            <StringItem index="10" value="5:00 AM"/>
+            <StringItem index="11" value="5:30 AM"/>
+            <StringItem index="12" value="6:00 AM"/>
+            <StringItem index="13" value="6:30 AM"/>
+            <StringItem index="14" value="7:00 AM"/>
+            <StringItem index="15" value="7:30 AM"/>
+            <StringItem index="16" value="8:00 AM"/>
+            <StringItem index="17" value="8:30 AM"/>
+            <StringItem index="18" value="9:00 AM"/>
+            <StringItem index="19" value="9:30 AM"/>
+            <StringItem index="20" value="10:00 AM"/>
+            <StringItem index="21" value="10:30 AM"/>
+            <StringItem index="22" value="11:00 AM"/>
+            <StringItem index="23" value="11:30 AM"/>
+            <StringItem index="24" value="12:00 AM"/>
+            <StringItem index="25" value="12:30 AM"/>
+            <StringItem index="26" value="1:00 PM"/>
+            <StringItem index="27" value="1:30 PM"/>
+            <StringItem index="28" value="2:00 PM"/>
+            <StringItem index="29" value="2:30 PM"/>
+            <StringItem index="30" value="3:00 PM"/>
+            <StringItem index="31" value="3:30 PM"/>
+            <StringItem index="32" value="4:00 PM"/>
+            <StringItem index="33" value="4:30 PM"/>
+            <StringItem index="34" value="5:00 PM"/>
+            <StringItem index="35" value="5:30 PM"/>
+            <StringItem index="36" value="6:00 PM"/>
+            <StringItem index="37" value="6:30 PM"/>
+            <StringItem index="38" value="7:00 PM"/>
+            <StringItem index="39" value="7:30 PM"/>
+            <StringItem index="40" value="8:00 PM"/>
+            <StringItem index="41" value="8:30 PM"/>
+            <StringItem index="42" value="9:00 PM"/>
+            <StringItem index="43" value="9:30 PM"/>
+            <StringItem index="44" value="10:00 PM"/>
+            <StringItem index="45" value="10:30 PM"/>
+            <StringItem index="46" value="11:00 PM"/>
+            <StringItem index="47" value="11:30 PM"/>
+          </StringArray>
+        </Property>
+        <Property name="name" type="java.lang.String" value="hourComboBox" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.Label" name="durationLabel">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="durationLabel" noResource="true"/>
+        <Property name="text" type="java.lang.String" resourceKey="durationLabel.text"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="durationDaysComboBox1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="30">
+            <StringItem index="0" value="1"/>
+            <StringItem index="1" value="2"/>
+            <StringItem index="2" value="3"/>
+            <StringItem index="3" value="4"/>
+            <StringItem index="4" value="5"/>
+            <StringItem index="5" value="6"/>
+            <StringItem index="6" value="7"/>
+            <StringItem index="7" value="8"/>
+            <StringItem index="8" value="99"/>
+            <StringItem index="9" value="10"/>
+            <StringItem index="10" value="11"/>
+            <StringItem index="11" value="12"/>
+            <StringItem index="12" value="13"/>
+            <StringItem index="13" value="14"/>
+            <StringItem index="14" value="15"/>
+            <StringItem index="15" value="16"/>
+            <StringItem index="16" value="17"/>
+            <StringItem index="17" value="18"/>
+            <StringItem index="18" value="19"/>
+            <StringItem index="19" value="20"/>
+            <StringItem index="20" value="21"/>
+            <StringItem index="21" value="22"/>
+            <StringItem index="22" value="23"/>
+            <StringItem index="23" value="24"/>
+            <StringItem index="24" value="25"/>
+            <StringItem index="25" value="26"/>
+            <StringItem index="26" value="27"/>
+            <StringItem index="27" value="28"/>
+            <StringItem index="28" value="29"/>
+            <StringItem index="29" value="30"/>
+          </StringArray>
+        </Property>
+        <Property name="name" type="java.lang.String" value="durationDaysComboBox1" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.Label" name="daysLabel">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="daysLabel" noResource="true"/>
+        <Property name="text" type="java.lang.String" resourceKey="daysLabel.text"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="durationHoursComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="23">
+            <StringItem index="0" value="1"/>
+            <StringItem index="1" value="2"/>
+            <StringItem index="2" value="3"/>
+            <StringItem index="3" value="4"/>
+            <StringItem index="4" value="5"/>
+            <StringItem index="5" value="6"/>
+            <StringItem index="6" value="7"/>
+            <StringItem index="7" value="8"/>
+            <StringItem index="8" value="99"/>
+            <StringItem index="9" value="10"/>
+            <StringItem index="10" value="11"/>
+            <StringItem index="11" value="12"/>
+            <StringItem index="12" value="13"/>
+            <StringItem index="13" value="14"/>
+            <StringItem index="14" value="15"/>
+            <StringItem index="15" value="16"/>
+            <StringItem index="16" value="17"/>
+            <StringItem index="17" value="18"/>
+            <StringItem index="18" value="19"/>
+            <StringItem index="19" value="20"/>
+            <StringItem index="20" value="21"/>
+            <StringItem index="21" value="22"/>
+            <StringItem index="22" value="23"/>
+          </StringArray>
+        </Property>
+        <Property name="name" type="java.lang.String" value="durationHoursComboBox" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.Label" name="hoursLabel">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="hoursLabel" noResource="true"/>
+        <Property name="text" type="java.lang.String" resourceKey="hoursLabel.text"/>
+      </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" resourceKey="hoursDurationLabel.AccessibleContext.accessibleName"/>
+      </AccessibilityProperties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="durationMinutesComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Item 1"/>
+            <StringItem index="1" value="Item 2"/>
+            <StringItem index="2" value="Item 3"/>
+            <StringItem index="3" value="Item 4"/>
+          </StringArray>
+        </Property>
+        <Property name="name" type="java.lang.String" value="durationMinutesComboBox" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.Label" name="minutesLabel">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="minutesLabel" noResource="true"/>
+        <Property name="text" type="java.lang.String" resourceKey="minutesLabel.text"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.Button" name="acceptBtn">
+      <Properties>
+        <Property name="label" type="java.lang.String" resourceKey="Accept.label"/>
+        <Property name="name" type="java.lang.String" value="Accept" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.Button" name="cancelBtn">
+      <Properties>
+        <Property name="label" type="java.lang.String" resourceKey="cancelBtn.label"/>
+        <Property name="name" type="java.lang.String" value="cancelBtn" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="java.awt.Label" name="eventDescriptionLabel">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="eventDescriptionLabel" noResource="true"/>
+        <Property name="text" type="java.lang.String" resourceKey="eventDescriptionLabel.text"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.TextArea" name="textArea1">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="textArea1" noResource="true"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
