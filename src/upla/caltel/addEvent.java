@@ -13,8 +13,9 @@ package upla.caltel;
 
 /**
  *
- * @author thibault
+ * @author Saunier Thibault;
  */
+
 public class addEvent extends javax.swing.JFrame {
 
     /** Creates new form addEvent */

@@ -15,6 +15,8 @@ import javax.swing.Timer;
 import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import com.toedter.calendar.JCalendar;
+
 
 /**
  * The application's main frame.
@@ -88,10 +90,6 @@ public class CalTelView extends FrameView {
 
                 mainPanel = new javax.swing.JPanel();
                 mainTabs = new javax.swing.JTabbedPane();
-                calendarPanel = new javax.swing.JPanel();
-                calendarToolBar = new javax.swing.JToolBar();
-                contactsScrollPane1 = new javax.swing.JScrollPane();
-                dayEventsList = new javax.swing.JList();
                 phoneGuidePanel = new javax.swing.JPanel();
                 groupsPanel = new javax.swing.JPanel();
                 groupsToolBar = new javax.swing.JToolBar();
@@ -101,51 +99,22 @@ public class CalTelView extends FrameView {
                 contactsScrollPane = new javax.swing.JScrollPane();
                 contactsList = new javax.swing.JList();
                 phoneGuideContactsToolBar = new javax.swing.JToolBar();
+                calendarPanel = new javax.swing.JPanel();
+                calendarToolBar = new javax.swing.JToolBar();
+                contactsScrollPane1 = new javax.swing.JScrollPane();
+                dayEventsList = new javax.swing.JList();
+                jCalendar1 = new com.toedter.calendar.JCalendar();
+                jCalendar2 = new com.toedter.calendar.JCalendar();
                 menuBar = new javax.swing.JMenuBar();
                 javax.swing.JMenu fileMenu = new javax.swing.JMenu();
                 javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
                 javax.swing.JMenu helpMenu = new javax.swing.JMenu();
                 javax.swing.JMenuItem aboutMenuItem = new javax.swing.JMenuItem();
 
+                mainPanel.setMinimumSize(new java.awt.Dimension(1029, 684));
                 mainPanel.setName("mainPanel"); // NOI18N
 
                 mainTabs.setName("mainTabs"); // NOI18N
-
-                calendarPanel.setName("calendarPanel"); // NOI18N
-
-                calendarToolBar.setRollover(true);
-                calendarToolBar.setName("calendarToolBar"); // NOI18N
-
-                contactsScrollPane1.setName("contactsScrollPane1"); // NOI18N
-
-                dayEventsList.setModel(new javax.swing.AbstractListModel() {
-                        String[] strings = { "12:30 Meeting with James Castel", "15:00 Learn how to walk ont hands", " ", " " };
-                        public int getSize() { return strings.length; }
-                        public Object getElementAt(int i) { return strings[i]; }
-                });
-                dayEventsList.setName("dayEventsList"); // NOI18N
-                contactsScrollPane1.setViewportView(dayEventsList);
-
-                javax.swing.GroupLayout calendarPanelLayout = new javax.swing.GroupLayout(calendarPanel);
-                calendarPanel.setLayout(calendarPanelLayout);
-                calendarPanelLayout.setHorizontalGroup(
-                        calendarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(calendarToolBar, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, calendarPanelLayout.createSequentialGroup()
-                                .addContainerGap(506, Short.MAX_VALUE)
-                                .addComponent(contactsScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
-                );
-                calendarPanelLayout.setVerticalGroup(
-                        calendarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(calendarPanelLayout.createSequentialGroup()
-                                .addComponent(calendarToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(contactsScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
-                                .addContainerGap())
-                );
-
-                org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(upla.caltel.CalTelApp.class).getContext().getResourceMap(CalTelView.class);
-                mainTabs.addTab(resourceMap.getString("calendarPanel.TabConstraints.tabTitle"), calendarPanel); // NOI18N
 
                 phoneGuidePanel.setName("phoneGuidePanel"); // NOI18N
 
@@ -176,7 +145,7 @@ public class CalTelView extends FrameView {
                         .addGroup(groupsPanelLayout.createSequentialGroup()
                                 .addComponent(groupsToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(groupsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE))
+                                .addComponent(groupsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE))
                 );
 
                 contactsPanel.setName("contactsPanel"); // NOI18N
@@ -198,15 +167,15 @@ public class CalTelView extends FrameView {
                 contactsPanel.setLayout(contactsPanelLayout);
                 contactsPanelLayout.setHorizontalGroup(
                         contactsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(phoneGuideContactsToolBar, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
-                        .addComponent(contactsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
+                        .addComponent(phoneGuideContactsToolBar, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
+                        .addComponent(contactsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE)
                 );
                 contactsPanelLayout.setVerticalGroup(
                         contactsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(contactsPanelLayout.createSequentialGroup()
                                 .addComponent(phoneGuideContactsToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(contactsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                                .addComponent(contactsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
                                 .addContainerGap())
                 );
 
@@ -227,29 +196,89 @@ public class CalTelView extends FrameView {
                         .addComponent(contactsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
 
-                mainTabs.addTab(resourceMap.getString("phoneGuidePanel.TabConstraints.tabTitle"), phoneGuidePanel); // NOI18N
+                mainTabs.addTab("Phone Guide", phoneGuidePanel);
+
+                calendarPanel.setName("calendarPanel"); // NOI18N
+
+                calendarToolBar.setRollover(true);
+                calendarToolBar.setName("calendarToolBar"); // NOI18N
+
+                contactsScrollPane1.setName("contactsScrollPane1"); // NOI18N
+
+                dayEventsList.setModel(new javax.swing.AbstractListModel() {
+                        String[] strings = { "12:30 Meeting with James Castel", "15:00 Learn how to walk ont hands", " ", " " };
+                        public int getSize() { return strings.length; }
+                        public Object getElementAt(int i) { return strings[i]; }
+                });
+                dayEventsList.setMinimumSize(new java.awt.Dimension(232, 600));
+                dayEventsList.setName("dayEventsList"); // NOI18N
+                contactsScrollPane1.setViewportView(dayEventsList);
+
+                jCalendar1.setName("jCalendar1"); // NOI18N
+
+                jCalendar2.setName("jCalendar2"); // NOI18N
+
+                javax.swing.GroupLayout calendarPanelLayout = new javax.swing.GroupLayout(calendarPanel);
+                calendarPanel.setLayout(calendarPanelLayout);
+                calendarPanelLayout.setHorizontalGroup(
+                        calendarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(calendarPanelLayout.createSequentialGroup()
+                                .addGroup(calendarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jCalendar2, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                                        .addGroup(calendarPanelLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(contactsScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
+                                .addContainerGap())
+                        .addComponent(calendarToolBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 997, Short.MAX_VALUE)
+                );
+                calendarPanelLayout.setVerticalGroup(
+                        calendarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(calendarPanelLayout.createSequentialGroup()
+                                .addComponent(calendarToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addGroup(calendarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(calendarPanelLayout.createSequentialGroup()
+                                                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(2, 2, 2)
+                                                .addComponent(jCalendar2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addContainerGap())
+                                        .addComponent(contactsScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)))
+                );
+
+                mainTabs.addTab("Calendar", calendarPanel);
 
                 javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
                 mainPanel.setLayout(mainPanelLayout);
                 mainPanelLayout.setHorizontalGroup(
                         mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(mainTabs)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(mainTabs, javax.swing.GroupLayout.DEFAULT_SIZE, 1005, Short.MAX_VALUE)
+                                .addContainerGap())
                 );
                 mainPanelLayout.setVerticalGroup(
                         mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(mainTabs, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(mainTabs, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE))
                 );
-
-                mainTabs.getAccessibleContext().setAccessibleName(resourceMap.getString("jTabbedPane1.AccessibleContext.accessibleName")); // NOI18N
 
                 menuBar.setName("menuBar"); // NOI18N
 
+                org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(CalTelView.class);
                 fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
                 fileMenu.setName("fileMenu"); // NOI18N
 
-                javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(upla.caltel.CalTelApp.class).getContext().getActionMap(CalTelView.class, this);
-                exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
+                exitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, 0));
+                exitMenuItem.setText(resourceMap.getString("exitMenuItem.text")); // NOI18N
                 exitMenuItem.setName("exitMenuItem"); // NOI18N
+                exitMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                exitMenuItemMouseClicked(evt);
+                        }
+                });
                 fileMenu.add(exitMenuItem);
 
                 menuBar.add(fileMenu);
@@ -257,15 +286,31 @@ public class CalTelView extends FrameView {
                 helpMenu.setText(resourceMap.getString("helpMenu.text")); // NOI18N
                 helpMenu.setName("helpMenu"); // NOI18N
 
-                aboutMenuItem.setAction(actionMap.get("showAboutBox")); // NOI18N
+                aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, 0));
+                aboutMenuItem.setText(resourceMap.getString("aboutMenuItem.text")); // NOI18N
                 aboutMenuItem.setName("aboutMenuItem"); // NOI18N
+                aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                aboutMenuItemActionPerformed(evt);
+                        }
+                });
                 helpMenu.add(aboutMenuItem);
 
                 menuBar.add(helpMenu);
 
                 setComponent(mainPanel);
                 setMenuBar(menuBar);
+                setStatusBar(calendarToolBar);
+                setToolBar(calendarToolBar);
         }// </editor-fold>//GEN-END:initComponents
+
+    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+	    // TODO add your handling code here:
+    }//GEN-LAST:event_aboutMenuItemActionPerformed
+
+    private void exitMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMenuItemMouseClicked
+	   //CalTelApp.getApplication().quit(evt);
+    }//GEN-LAST:event_exitMenuItemMouseClicked
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JPanel calendarPanel;
@@ -279,12 +324,16 @@ public class CalTelView extends FrameView {
         private javax.swing.JPanel groupsPanel;
         private javax.swing.JScrollPane groupsScrollPane;
         private javax.swing.JToolBar groupsToolBar;
+        private com.toedter.calendar.JCalendar jCalendar1;
+        private com.toedter.calendar.JCalendar jCalendar2;
         private javax.swing.JPanel mainPanel;
         private javax.swing.JTabbedPane mainTabs;
         private javax.swing.JMenuBar menuBar;
         private javax.swing.JToolBar phoneGuideContactsToolBar;
         private javax.swing.JPanel phoneGuidePanel;
         // End of variables declaration//GEN-END:variables
+
+	private JCalendar Calendar;
 
     private final Timer messageTimer;
     private final Timer busyIconTimer;

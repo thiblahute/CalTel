@@ -116,7 +116,7 @@ public class CalTelAboutBox extends javax.swing.JDialog {
         }// </editor-fold>//GEN-END:initComponents
 
 	private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
-		// TODO add your handling code here:
+		
 	}//GEN-LAST:event_closeButtonActionPerformed
     
         // Variables declaration - do not modify//GEN-BEGIN:variables
