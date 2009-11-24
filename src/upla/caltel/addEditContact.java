@@ -101,6 +101,11 @@ public class addEditContact extends javax.swing.JFrame {
 
                 groupComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "No Group" }));
                 groupComboBox.setName("groupComboBox"); // NOI18N
+                groupComboBox.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                groupComboBoxActionPerformed(evt);
+                        }
+                });
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
@@ -179,13 +184,20 @@ public class addEditContact extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
-	    // TODO add your handling code here:
-}//GEN-LAST:event_cancelBtnActionPerformed
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        // TODO add your handling code here:
+    }
 
-    private void contactNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactNameTextActionPerformed
+    private void contactNameTextActionPerformed(java.awt.event.ActionEvent evt) 
+    {
 	    // TODO add your handling code here:
-    }//GEN-LAST:event_contactNameTextActionPerformed
+    }
+
+    private void groupComboBoxActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        this.hide();
+    }
 
     /**
     * @param args the command line arguments

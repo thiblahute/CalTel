@@ -56,22 +56,17 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="hoursLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="durationMinutesComboBox" pref="74" max="32767" attributes="1"/>
+                                      <Component id="durationMinutesComboBox" max="32767" attributes="1"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="cancelBtn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="minutesLabel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="acceptBtn" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="minutesLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="acceptBtn" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="hourComboBox" min="-2" max="-2" attributes="1"/>

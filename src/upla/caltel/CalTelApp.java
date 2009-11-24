@@ -6,6 +6,7 @@ package upla.caltel;
 
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
+import com.google.gdata.client.GoogleService;
 
 /**
  * The main class of the application.
@@ -15,8 +16,11 @@ public class CalTelApp extends SingleFrameApplication {
     /**
      * At startup create and show the main frame of the application.
      */
+    private GoogleBaseService service;
     @Override protected void startup() {
-        show(new CalTelView(this));
+        /*TODO  check it*/
+        show (new ConnectionWindow(this)); 
+        //show(new CalTelView(this));
     }
 
     /**
@@ -41,4 +45,9 @@ public class CalTelApp extends SingleFrameApplication {
     public static void main(String[] args) {
         launch(CalTelApp.class, args);
     }
+
+    public GoogleBaseService getService()
+      {
+        return this.service;
+      }
 }
