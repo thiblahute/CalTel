@@ -46,7 +46,7 @@ public class CalTelApp extends SingleFrameApplication {
         launch(CalTelApp.class, args);
     }
 
-    public GoogleBaseService getService()
+    public GoogleService getService()
       {
         return this.service;
       }
