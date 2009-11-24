@@ -24,89 +24,115 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="groupLabel" min="-2" max="-2" attributes="0"/>
-                  <Component id="kindOfContactLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="contactNameLabel" min="-2" max="-2" attributes="1"/>
                   <Component id="adressLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="cellPhoneNumberLabel" alignment="1" min="-2" max="-2" attributes="1"/>
-                  <Component id="emailAdressLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="emailAdressLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="cellPhoneNumberLabel" min="-2" max="-2" attributes="1"/>
+                  <Component id="contactNameLabel" alignment="1" min="-2" max="-2" attributes="1"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="groupComboBox" min="-2" pref="328" max="-2" attributes="0"/>
+                      <Component id="contactNameText" pref="391" max="32767" attributes="1"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="kindOfContactText" pref="182" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="emailAdressText" pref="339" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="cellPhoneNumberText" pref="339" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="cancelBtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="acceptBtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="contactNameText" pref="339" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="addressText1" pref="339" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="acceptBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cancelBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="addressText1" pref="391" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="emailAdressText" pref="391" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="cellPhoneNumberText" pref="391" max="32767" attributes="1"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="kindOfContactLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="groupLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="groupComboBox" alignment="0" min="-2" pref="328" max="-2" attributes="0"/>
+                  <Component id="kindOfContactText" alignment="1" pref="391" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Component id="jSeparator1" alignment="1" pref="552" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="215" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="contactNameText" min="-2" max="-2" attributes="1"/>
-                  <Component id="contactNameLabel" max="32767" attributes="1"/>
+                  <Group type="102" attributes="0">
+                      <Component id="contactNameLabel" pref="26" max="32767" attributes="1"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="contactNameText" min="-2" max="-2" attributes="1"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="cellPhoneNumberLabel" max="32767" attributes="1"/>
-                  <Component id="cellPhoneNumberText" min="-2" max="-2" attributes="1"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="cellPhoneNumberLabel" pref="26" max="32767" attributes="1"/>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="cellPhoneNumberText" min="-2" max="-2" attributes="1"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="emailAdressLabel" min="-2" max="-2" attributes="1"/>
-                  <Component id="emailAdressText" min="-2" max="-2" attributes="1"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="emailAdressLabel" min="-2" max="-2" attributes="1"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="adressLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="1">
+                      <Component id="emailAdressText" min="-2" max="-2" attributes="1"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="addressText1" min="-2" max="-2" attributes="1"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="adressLabel" min="-2" max="-2" attributes="0"/>
-                  <Component id="addressText1" min="-2" max="-2" attributes="1"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="kindOfContactLabel" min="-2" max="-2" attributes="0"/>
                   <Component id="kindOfContactText" min="-2" max="-2" attributes="1"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="groupComboBox" min="-2" max="-2" attributes="0"/>
-                  <Component id="groupLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="groupComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="groupLabel" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="cancelBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="acceptBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="acceptBtn" min="-2" max="-2" attributes="0"/>
+                  <Component id="cancelBtn" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -120,6 +146,7 @@
     </Component>
     <Component class="java.awt.TextField" name="contactNameText">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="contactNameText.font"/>
         <Property name="name" type="java.lang.String" value="contactNameText" noResource="true"/>
         <Property name="text" type="java.lang.String" resourceKey="contactNameText.text"/>
       </Properties>
@@ -135,6 +162,7 @@
     </Component>
     <Component class="java.awt.TextField" name="cellPhoneNumberText">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cellPhoneNumberText.font"/>
         <Property name="name" type="java.lang.String" value="cellPhoneNumberText" noResource="true"/>
         <Property name="text" type="java.lang.String" resourceKey="cellPhoneNumberText.text"/>
       </Properties>
@@ -171,18 +199,21 @@
     </Component>
     <Component class="java.awt.TextField" name="emailAdressText">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="emailAddressText.font"/>
         <Property name="name" type="java.lang.String" value="emailAddressText" noResource="true"/>
         <Property name="text" type="java.lang.String" resourceKey="emailAddressText.text"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="addressText1">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="addressText.font"/>
         <Property name="name" type="java.lang.String" value="addressText" noResource="true"/>
         <Property name="text" type="java.lang.String" resourceKey="addressText.text"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="kindOfContactText">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="kindOfContactText.font"/>
         <Property name="name" type="java.lang.String" value="kindOfContactText" noResource="true"/>
         <Property name="text" type="java.lang.String" resourceKey="kindOfContactText.text"/>
       </Properties>
@@ -210,6 +241,18 @@
           </StringArray>
         </Property>
         <Property name="name" type="java.lang.String" value="groupComboBox" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="jLabel1.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="jLabel1.text"/>
+        <Property name="name" type="java.lang.String" value="jLabel1" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="jSeparator1" noResource="true"/>
       </Properties>
     </Component>
   </SubComponents>

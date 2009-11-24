@@ -43,8 +43,8 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Phone Guide">
-                    <Property name="tabTitle" type="java.lang.String" value="Phone Guide"/>
+                  <JTabbedPaneConstraints tabName="Guia Telefonica">
+                    <Property name="tabTitle" type="java.lang.String" resourceKey="phoneGuidePanel.TabConstraints.tabTitle"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -87,7 +87,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="groupsToolBar" min="-2" pref="25" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="groupsScrollPane" pref="594" max="32767" attributes="1"/>
+                              <Component id="groupsScrollPane" pref="600" max="32767" attributes="1"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -134,8 +134,8 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="phoneGuideContactsToolBar" alignment="0" pref="852" max="32767" attributes="0"/>
-                          <Component id="contactsScrollPane" alignment="0" pref="852" max="32767" attributes="0"/>
+                          <Component id="phoneGuideContactsToolBar" alignment="0" pref="856" max="32767" attributes="0"/>
+                          <Component id="contactsScrollPane" alignment="0" pref="856" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -143,7 +143,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="phoneGuideContactsToolBar" min="-2" pref="25" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="contactsScrollPane" pref="594" max="32767" attributes="1"/>
+                              <Component id="contactsScrollPane" pref="600" max="32767" attributes="1"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -191,8 +191,8 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Calendar">
-                    <Property name="tabTitle" type="java.lang.String" value="Calendar"/>
+                  <JTabbedPaneConstraints tabName="Calendario">
+                    <Property name="tabTitle" type="java.lang.String" resourceKey="calendarPanel.TabConstraints.tabTitle"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -202,24 +202,24 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jCalendar2" pref="310" max="32767" attributes="1"/>
+                              <Component id="jCalendar2" pref="312" max="32767" attributes="1"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jCalendar1" pref="298" max="32767" attributes="1"/>
+                                  <Component id="jCalendar1" pref="300" max="32767" attributes="1"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="contactsScrollPane1" pref="669" max="32767" attributes="0"/>
+                          <Component id="contactsScrollPane1" pref="671" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Component id="calendarToolBar" alignment="1" pref="997" max="32767" attributes="0"/>
+                      <Component id="calendarToolBar" alignment="1" pref="1001" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="calendarToolBar" min="-2" pref="25" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jCalendar1" min="-2" pref="182" max="-2" attributes="0"/>
@@ -227,7 +227,7 @@
                                   <Component id="jCalendar2" min="-2" pref="203" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
-                              <Component id="contactsScrollPane1" alignment="0" pref="606" max="32767" attributes="1"/>
+                              <Component id="contactsScrollPane1" alignment="0" pref="534" max="32767" attributes="1"/>
                           </Group>
                       </Group>
                   </Group>
