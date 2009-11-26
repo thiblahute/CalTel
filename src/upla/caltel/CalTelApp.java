@@ -16,11 +16,11 @@ public class CalTelApp extends SingleFrameApplication {
     /**
      * At startup create and show the main frame of the application.
      */
-    private GoogleBaseService service;
+    private GoogleService service;
     @Override protected void startup() {
         /*TODO  check it*/
-        show (new ConnectionWindow(this)); 
-        //show(new CalTelView(this));
+        show (new ConnectionWindow(this));
+        show(new CalTelView(this));
     }
 
     /**

@@ -39,7 +39,7 @@ public class CalTelCalendarHandling
         try 
           {
             /* Get the feed*/
-            resultFeed = ((CalendarSession)app.service).getFeed(feedUrl, CalendarFeed.class);
+            resultFeed = (app.getService()).getFeed(feedUrl, CalendarFeed.class);
           }
         catch (java.io.IOException exception)
           {
