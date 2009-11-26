@@ -6,7 +6,8 @@ package upla.caltel;
 
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
-import com.google.gdata.client.GoogleService;
+import com.google.gdata.client.calendar.CalendarService;
+import com.google.gdata.client.contacts.ContactsService;
 
 /**
  * The main class of the application.
@@ -16,11 +17,14 @@ public class CalTelApp extends SingleFrameApplication {
     /**
      * At startup create and show the main frame of the application.
      */
-    private GoogleService service;
+    private CalendarService calendarService;
+    private ContactsService contactService;
     @Override protected void startup() {
         /*TODO  check it*/
-        show (new ConnectionWindow(this));
-        show(new CalTelView(this));
+        this.contactService = new ContactsService("CalTel");
+        this.calendarService = new CalendarService("CalTel");
+        show (new CalTelView(this));
+        show (new conexionwindow (this));
     }
 
     /**
@@ -46,8 +50,13 @@ public class CalTelApp extends SingleFrameApplication {
         launch(CalTelApp.class, args);
     }
 
-    public GoogleService getService()
+    public ContactsService getContactService()
       {
-        return this.service;
+        return this.contactService;
+      }
+
+    public CalendarService getCalendarService()
+      {
+        return this.calendarService;
       }
 }
