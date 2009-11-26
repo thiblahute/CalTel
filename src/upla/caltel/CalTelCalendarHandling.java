@@ -2,7 +2,7 @@
  * filename : CalTelContactHandling.java
  * @Copyright (C) Thibault Saunier 2009 <saunierthibault@gmail.com>
  *
- * @Author: Thibault Saunier <saunierthibault@gmail.com>
+ * @Author: Thibault Saunier, David Vargas, Carlos Lagos D.
  */
 
 package upla.caltel;
