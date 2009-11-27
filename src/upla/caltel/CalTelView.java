@@ -95,7 +95,7 @@ public class CalTelView extends FrameView {
                 groupsToolBar = new javax.swing.JToolBar();
                 groupsScrollPane = new javax.swing.JScrollPane();
                 groupsList = new javax.swing.DefaultListModel();
-                jGourpsList = new javax.swing.JList();
+                jGroupList = new javax.swing.JList();
                 contactsPanel = new javax.swing.JPanel();
                 contactsScrollPane = new javax.swing.JScrollPane();
                 contactList = new javax.swing.DefaultListModel();
@@ -104,7 +104,8 @@ public class CalTelView extends FrameView {
                 calendarPanel = new javax.swing.JPanel();
                 calendarToolBar = new javax.swing.JToolBar();
                 contactsScrollPane1 = new javax.swing.JScrollPane();
-                dayEventsList = new javax.swing.JList();
+                dayEventsList = new javax.swing.DefaultListModel();
+                jDayEventList = new javax.swing.JList();
                 jCalendar1 = new com.toedter.calendar.JCalendar();
                 jCalendar2 = new com.toedter.calendar.JCalendar();
                 menuBar = new javax.swing.JMenuBar();
@@ -127,9 +128,9 @@ public class CalTelView extends FrameView {
 
                 groupsScrollPane.setName("groupsScrollPane"); // NOI18N
 
-                jGourpsList.setModel(groupsList);
-                jGourpsList.setName("jGourpsList"); // NOI18N
-                groupsScrollPane.setViewportView(jGourpsList);
+                jGroupList.setModel(groupsList);
+                jGroupList.setName("jGourpsList"); // NOI18N
+                groupsScrollPane.setViewportView(jGroupList);
 
                 javax.swing.GroupLayout groupsPanelLayout = new javax.swing.GroupLayout(groupsPanel);
                 groupsPanel.setLayout(groupsPanelLayout);
@@ -200,14 +201,10 @@ public class CalTelView extends FrameView {
 
                 contactsScrollPane1.setName("contactsScrollPane1"); // NOI18N
 
-                dayEventsList.setModel(new javax.swing.AbstractListModel() {
-                        String[] strings = { "12:30 Meeting with James Castel", "15:00 Learn how to walk ont hands", " ", " " };
-                        public int getSize() { return strings.length; }
-                        public Object getElementAt(int i) { return strings[i]; }
-                });
-                dayEventsList.setMinimumSize(new java.awt.Dimension(232, 600));
-                dayEventsList.setName("dayEventsList"); // NOI18N
-                contactsScrollPane1.setViewportView(dayEventsList);
+                jDayEventList.setModel(dayEventsList);
+                jDayEventList.setMinimumSize(new java.awt.Dimension(232, 600));
+                jDayEventList.setName("dayEventsList"); // NOI18N
+                contactsScrollPane1.setViewportView(jDayEventList);
 
                 jCalendar1.setName("jCalendar1"); // NOI18N
 
@@ -314,6 +311,10 @@ public class CalTelView extends FrameView {
       {
         return contactList;
       }
+    public javax.swing.DefaultListModel getDayEventsList ()
+      {
+        return this.dayEventsList;
+      }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JPanel calendarPanel;
@@ -322,8 +323,8 @@ public class CalTelView extends FrameView {
         private javax.swing.JPanel contactsPanel;
         private javax.swing.JScrollPane contactsScrollPane;
         private javax.swing.JScrollPane contactsScrollPane1;
-        private javax.swing.JList dayEventsList;
-        private javax.swing.JList jGourpsList;
+        private javax.swing.JList jDayEventList;
+        private javax.swing.JList jGroupList;
         private javax.swing.JPanel groupsPanel;
         private javax.swing.JScrollPane groupsScrollPane;
         private javax.swing.JToolBar groupsToolBar;
@@ -336,6 +337,7 @@ public class CalTelView extends FrameView {
         private javax.swing.JPanel phoneGuidePanel;
         private javax.swing.DefaultListModel groupsList;
         private javax.swing.DefaultListModel contactList;
+        private javax.swing.DefaultListModel dayEventsList;
         // End of variables declaration//GEN-END:variables
 
 	private JCalendar Calendar;

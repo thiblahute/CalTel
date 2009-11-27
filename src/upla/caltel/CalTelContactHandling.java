@@ -13,7 +13,6 @@ import com.google.gdata.data.contacts.ContactGroupEntry;
 import com.google.gdata.data.contacts.ContactFeed;
 import com.google.gdata.data.contacts.ContactEntry;
 
-
 import java.net.URL;
 
 public class CalTelContactHandling 

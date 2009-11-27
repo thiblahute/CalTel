@@ -165,7 +165,7 @@
                             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                               <Connection code="javax.swing.DefaultListModel&#xa;" type="code"/>
                             </Property>
-                            <Property name="name" type="java.lang.String" value="contactsList" noResource="true"/>
+                            <Property name="name" type="java.lang.String" value="jContactsList" noResource="true"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -198,34 +198,38 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jCalendar2" pref="310" max="32767" attributes="1"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jCalendar1" pref="298" max="32767" attributes="1"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="calendarToolBar" alignment="0" pref="985" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jCalendar2" pref="389" max="32767" attributes="1"/>
+                                      </Group>
+                                      <Component id="jCalendar1" alignment="1" min="-2" pref="395" max="-2" attributes="1"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="contactsScrollPane1" pref="572" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="contactsScrollPane1" pref="669" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Component id="calendarToolBar" alignment="1" pref="997" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="calendarToolBar" min="-2" pref="25" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jCalendar1" min="-2" pref="182" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                  <Component id="jCalendar2" min="-2" pref="203" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jCalendar2" min="-2" pref="203" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="contactsScrollPane1" alignment="0" pref="485" max="32767" attributes="1"/>
+                              <Component id="contactsScrollPane1" pref="588" max="32767" attributes="1"/>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
