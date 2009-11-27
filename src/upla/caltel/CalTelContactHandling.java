@@ -86,7 +86,12 @@ public class CalTelContactHandling
         for (i=0; i <contactFeed.getEntries().size (); i++)
           {
             ContactEntry entry = contactFeed.getEntries().get(i);
-            contactList.addElement ((entry.getTitle()).getPlainText());
+            String email = null;
+            if (entry.getEmailAddresses().size()>0)
+                email = " "+entry.getEmailAddresses().get(0).getAddress();
+            else 
+                email = "";
+            contactList.addElement ((entry.getTitle()).getPlainText()+email);
           }
       }
 }
