@@ -16,12 +16,13 @@ import com.google.gdata.data.DateTime;
 import org.jdesktop.application.FrameView;
 
 import java.net.URL;
-public class CalTelCalendarHandling 
+
+/** 
+ *  Handle evrything about calendar
+ */
+public void setCalendarGui (CalTelView view, CalendarService service, String username)
+        public class CalTelCalendarHandling 
 {
-    /** 
-     *
-     */
-    public void setCalendarGui (CalTelView view, CalendarService service, String username)
       {
         int i;
         URL feedUrl = null;

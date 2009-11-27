@@ -1,20 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * addEvent.java
- *
- * Created on Sep 27, 2009, 8:18:19 PM
+ * @Author: David Vargas, Thibault Saunier, Carlos Lagos D.
  */
 
 package upla.caltel;
 
-/**
- *
- * @author thibault
- */
 public class addEditContact extends javax.swing.JFrame {
 
     /** Creates new form addEvent */
@@ -210,15 +199,13 @@ public class addEditContact extends javax.swing.JFrame {
         kindOfContactLabel.getAccessibleContext().setAccessibleName(resourceMap.getString("adressLabel1.AccessibleContext.accessibleName")); // NOI18N
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
-	    // TODO add your handling code here:
-}//GEN-LAST:event_cancelBtnActionPerformed
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {
+}
 
-    private void contactNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactNameTextActionPerformed
-	    // TODO add your handling code here:
-    }//GEN-LAST:event_contactNameTextActionPerformed
+    private void contactNameTextActionPerformed(java.awt.event.ActionEvent evt) {
+    }
 
     /**
     * @param args the command line arguments

@@ -6,6 +6,9 @@ package upla.caltel;
 
 import org.jdesktop.application.Action;
 
+/**
+ * Manage the about windows
+ **/
 public class CalTelAboutBox extends javax.swing.JDialog {
 
     public CalTelAboutBox(java.awt.Frame parent) {

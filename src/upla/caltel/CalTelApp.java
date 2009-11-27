@@ -1,5 +1,6 @@
 /*
  * CalTelApp.java
+ * @Author: Thibault Saunier, David Vargas, Carlos Lagos D.
  */
 
 package upla.caltel;

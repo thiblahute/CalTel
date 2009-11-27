@@ -1,9 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
+/**
  * @Author: David Vargas, Thibault Saunier, Carlos Lagos D.
  *
  * Created on Sep 27, 2009, 8:18:19 PM
@@ -13,11 +8,6 @@ package upla.caltel;
 
 import com.google.gdata.client.calendar.CalendarService;
 import com.google.gdata.client.contacts.ContactsService;
-
-/**
- *
- * @author Saunier Thibault;
- */
 
 public class conexionwindow extends javax.swing.JFrame {
 
@@ -178,13 +168,11 @@ public class conexionwindow extends javax.swing.JFrame {
            {
              this.app.getCalendarService().setUserCredentials (userName, psswd);
            }
-         catch ( com.google.gdata.util.AuthenticationException exception) 
+         catch (com.google.gdata.util.AuthenticationException exception) 
            {
              connected = false;
              System.out.println("com.google.gdata.util.AuthenticationException");
            }
-         /*catch (java.io.IOException exception)*/
-         /*{*/
 
          /*}*/
          if (connected == true)

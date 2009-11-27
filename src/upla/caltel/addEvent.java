@@ -1,19 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * addEvent.java
- *
- * Created on Sep 27, 2009, 8:18:19 PM
- */
-
-package upla.caltel;
-
 /**
  *
- * @author Saunier Thibault;
+ * Manage the addEvent GUI
+ * @Author: David Vargas, Thibault Saunier, Carlos Lagos D.
+ *  
  */
 
 public class addEvent extends javax.swing.JFrame {
