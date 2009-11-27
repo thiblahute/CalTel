@@ -24,7 +24,6 @@ public class CalTelApp extends SingleFrameApplication {
     private CalTelCalendarHandling calTelCalendarHandling;
     private String username;
     @Override protected void startup() {
-        /*TODO  check it*/
         this.contactService = new ContactsService("CalTel");
         this.calendarService = new CalendarService("CalTel");
         this.calTelView = new CalTelView(this);

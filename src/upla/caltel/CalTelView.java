@@ -202,11 +202,19 @@ public class CalTelView extends FrameView {
                 contactsScrollPane1.setName("contactsScrollPane1"); // NOI18N
 
                 jDayEventList.setModel(dayEventsList);
-                jDayEventList.setMinimumSize(new java.awt.Dimension(232, 600));
+                jDayEventList.setMinimumSize(new java.awt.Dimension(232, 800));
                 jDayEventList.setName("dayEventsList"); // NOI18N
                 contactsScrollPane1.setViewportView(jDayEventList);
 
                 jCalendar1.setName("jCalendar1"); // NOI18N
+                jCalendar1.addMouseListener(
+                    new java.awt.event.MouseAdapter() 
+                      {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) 
+                          {
+                            jCalendar1MouseClicked(evt);
+                          }
+                      });
 
                 jCalendar2.setName("jCalendar2"); // NOI18N
 
@@ -221,7 +229,7 @@ public class CalTelView extends FrameView {
                                                 .addContainerGap()
                                                 .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(contactsScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
+                                .addComponent(contactsScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
                                 .addContainerGap())
                         .addComponent(calendarToolBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 997, Short.MAX_VALUE)
                 );
@@ -302,6 +310,11 @@ public class CalTelView extends FrameView {
     private void exitMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMenuItemMouseClicked
 	   //CalTelApp.getApplication().quit(evt);
     }//GEN-LAST:event_exitMenuItemMouseClicked
+
+    private void jCalendar1MouseClicked(java.awt.event.MouseEvent evt)
+      {
+        System.out.println ("CalendarClicked");
+      }          
 
     public javax.swing.DefaultListModel getGroupsList()
       {

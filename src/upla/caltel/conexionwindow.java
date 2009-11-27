@@ -166,6 +166,7 @@ public class conexionwindow extends javax.swing.JFrame {
         String psswd = new String (password); 
          try 
            {
+             System.out.println ("Connecting...");
              this.app.getContactService().setUserCredentials (userName, psswd);
            }
          catch ( com.google.gdata.util.AuthenticationException exception) 

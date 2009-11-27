@@ -13,8 +13,7 @@ import com.google.gdata.data.calendar.CalendarEntry;
 import com.google.gdata.client.calendar.CalendarQuery;
 import com.google.gdata.client.calendar.CalendarQuery.ExtendedPropertyMatch;
 import com.google.gdata.data.DateTime;
-
-
+import org.jdesktop.application.FrameView;
 
 import java.net.URL;
 public class CalTelCalendarHandling 
