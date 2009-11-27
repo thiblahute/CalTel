@@ -10,9 +10,13 @@ package upla.caltel;
 import com.google.gdata.client.calendar.CalendarService;
 import com.google.gdata.data.calendar.CalendarFeed;
 import com.google.gdata.data.calendar.CalendarEntry;
+import com.google.gdata.client.calendar.CalendarQuery;
+import com.google.gdata.client.calendar.CalendarQuery.ExtendedPropertyMatch;
+import com.google.gdata.data.DateTime;
+
+
 
 import java.net.URL;
-
 public class CalTelCalendarHandling 
 {
     /** 
@@ -23,22 +27,27 @@ public class CalTelCalendarHandling
         int i;
         URL feedUrl = null;
         CalendarFeed calendarFeed;
+        CalendarQuery query;
 
         javax.swing.DefaultListModel calendarList = view.getDayEventsList ();
 
         /*Get calendar*/
         try
           {
-            feedUrl = new URL("http://www.google.com/calendar/feeds/"+username.replace("@","%40")+"/private/full");
+            feedUrl = new URL("http://www.google.com/calendar/feeds/"+username.replace("@","%40")+"/public/full");
+            /*feedUrl = new URL("http://www.google.com/calendar/feeds/e55743g0e9co2a2261819g6898%40group.calendar.google.com/private/full");*/
           }
         catch (java.net.MalformedURLException exception)
           {
           }
         calendarFeed = new CalendarFeed();
-        calendarFeed.declareExtensions (service.getExtensionProfile ());
+        query = new CalendarQuery (feedUrl);
+        //query.setMinimumStartTime ((new DateTime()).now());
+
         try
           {
-            calendarFeed =  service.getFeed(feedUrl, CalendarFeed.class);
+            calendarFeed =  service.query(query, CalendarFeed.class);
+              /*getFeed(feedUrl, CalendarFeed.class);*/
           }
         catch (java.net.MalformedURLException exception)
           {
