@@ -22,34 +22,8 @@ public class CalTelCalendarHandling
     /** 
      *
      */
-    public CalendarFeed GetCalendarFeed (CalTelApp app)
-    {
-        URL feedUrl = null;
-        CalendarFeed resultFeed = null;
-
-        try 
-          {
-            feedUrl = new URL("http://www.google.com/calendar/feeds/default/allcalendars/full");
-          }
-        catch (java.net.MalformedURLException exception) 
-          {
-            System.out.println("java.io.IOException");
-          }
-
-        try 
-          {
-            /* Get the feed*/
-            resultFeed = (app.getService()).getFeed(feedUrl, CalendarFeed.class);
-          }
-        catch (java.io.IOException exception)
-          {
-            System.out.println("java.io.IOException");
-          }
-        catch (com.google.gdata.util.ServiceException exception)
-          {
-            System.out.println("java.io.IOException");
-          }
-
-        return resultFeed;
-    }
+    public void setCalendarGui (CalTelView view, CalendarService service, String username)
+      {
+        
+      }
 }

@@ -7,55 +7,87 @@
 
 package upla.caltel;
 
-import com.google.gdata.client.*;
-import com.google.gdata.client.calendar.*;
-import com.google.gdata.data.*;
-import com.google.gdata.data.acl.*;
-import com.google.gdata.data.calendar.*;
-import com.google.gdata.util.*;
+import com.google.gdata.client.contacts.ContactsService;
+import com.google.gdata.data.contacts.ContactGroupFeed;
+import com.google.gdata.data.contacts.ContactGroupEntry;
+import com.google.gdata.data.contacts.ContactFeed;
+import com.google.gdata.data.contacts.ContactEntry;
+
+
 import java.net.URL;
 
 public class CalTelContactHandling 
 {
     /** 
      *
-     *
-    public static void main(String[]  
-    {
-        CalendarService myService = new CalendarService("exampleCo-exampleApp-1.0");
+     */
+    public void setContactGui (ContactsService service, CalTelView view, String username)
+      {
+        int i;
         URL feedUrl = null;
-        CalendarFeed resultFeed = null;
+        ContactGroupEntry groupEntry; 
+        ContactGroupFeed groupFeed;
+        ContactFeed contactFeed;
 
-        try {
-            myService.setUserCredentials("gvfs.gdata@gmail.com", "gvfsgvfs");
-        } catch ( com.google.gdata.util.AuthenticationException exception) {
-            System.out.println("com.google.gdata.util.AuthenticationException");
-        }va
+        javax.swing.DefaultListModel groupList = view.getGroupsList ();
+        javax.swing.DefaultListModel contactList = view.getContactList ();
 
-        try {
-            feedUrl = new URL("http://www.google.com/calendar/feeds/default/allcalendars/full");
-        } catch (java.net.MalformedURLException exception) {
-            System.out.println("java.io.IOException");
-        }
-
-        try {
-            resultFeed = myService.getFeed(feedUrl, CalendarFeed.class);
-        } catch (java.io.IOException exception){
-            System.out.println("java.io.IOException");
-        } catch (com.google.gdata.util.ServiceException exception){
-            System.out.println("java.io.IOException");
-        }
-
-        System.out.println("Your calendars:");
-        System.out.println();
-
-        for (int i = 0; i < resultFeed.getEntries().size(); i++) 
+        /*Get groups*/
+        try
           {
-            CalendarEntry entry = resultFeed.getEntries().get(i);
-            System.out.println("\t" + entry.getTitle().getPlainText());
+            feedUrl = new URL("http://www.google.com/m8/feeds/groups/"+username.replace("@","%40")+"/full");
           }
-    }*/
+        catch (java.net.MalformedURLException exception)
+          {
+          }
+        groupFeed = new ContactGroupFeed();
+        groupFeed.declareExtensions (service.getExtensionProfile ());
+        try
+          {
+            groupFeed =  service.getFeed(feedUrl, ContactGroupFeed.class);
+          }
+        catch (java.net.MalformedURLException exception)
+          {
+          }
+        catch (java.io.IOException exception)
+          {
+          }
+        catch (com.google.gdata.util.ServiceException exception)
+          {
+          }
+        for (i=0; i <groupFeed.getEntries().size (); i++)
+          {
+            ContactGroupEntry entry = groupFeed.getEntries().get(i);
+            groupList.addElement ((entry.getTitle()).getPlainText());
+          }
 
+        /*Get contacts from first group*/
+        try
+          {
+            feedUrl = new URL("http://www.google.com/m8/feeds/contacts/"+username.replace("@","%40")+"/full");
+          }
+        catch (java.net.MalformedURLException exception)
+          {
+          }
+        contactFeed = new ContactFeed();
+        contactFeed.declareExtensions (service.getExtensionProfile ());
+        try
+          {
+            contactFeed =  service.getFeed(feedUrl, ContactFeed.class);
+          }
+        catch (java.net.MalformedURLException exception)
+          {
+          }
+        catch (java.io.IOException exception)
+          {
+          }
+        catch (com.google.gdata.util.ServiceException exception)
+          {
+          }
+        for (i=0; i <contactFeed.getEntries().size (); i++)
+          {
+            ContactEntry entry = contactFeed.getEntries().get(i);
+            contactList.addElement ((entry.getTitle()).getPlainText());
+          }
+      }
 }
-// vim: ft=java
-

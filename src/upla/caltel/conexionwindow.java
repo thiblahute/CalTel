@@ -151,15 +151,16 @@ public class conexionwindow extends javax.swing.JFrame {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
-	    // TODO add your handling code here:
-}//GEN-LAST:event_cancelBtnActionPerformed
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) 
+      {
+      }
 
-    private void cancelBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelBtnMouseClicked
-	// TODO add your handling code here:
-    }//GEN-LAST:event_cancelBtnMouseClicked
+    private void cancelBtnMouseClicked(java.awt.event.MouseEvent evt) 
+      {
+      }
 
-    private void acceptBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_acceptBtnMouseClicked
+    private void acceptBtnMouseClicked(java.awt.event.MouseEvent evt) {
+        boolean connected = true;
         String userName = this.mailTxt.getText();
         char[] password = this.passwordTxt.getPassword ();
         String psswd = new String (password); 
@@ -169,10 +170,33 @@ public class conexionwindow extends javax.swing.JFrame {
            }
          catch ( com.google.gdata.util.AuthenticationException exception) 
            {
-
+             connected = false;
              System.out.println("com.google.gdata.util.AuthenticationException");
            }
-    }//GEN-LAST:event_acceptBtnMouseClicked
+         try 
+           {
+             this.app.getCalendarService().setUserCredentials (userName, psswd);
+           }
+         catch ( com.google.gdata.util.AuthenticationException exception) 
+           {
+             connected = false;
+             System.out.println("com.google.gdata.util.AuthenticationException");
+           }
+         /*catch (java.io.IOException exception)*/
+         /*{*/
+
+         /*}*/
+         if (connected == true)
+           {
+             CalTelCalendarHandling calTelCalendarHandling = new CalTelCalendarHandling ();
+             calTelCalendarHandling.setCalendarGui (this.app.getCalTelView (), this.app.getCalendarService(), userName);
+
+             CalTelContactHandling calTelContactHandling = new CalTelContactHandling ();
+             calTelContactHandling.setContactGui (this.app.getContactService(), this.app.getCalTelView (), userName);
+             this.app.setUsername (userName);
+             this.hide();
+           }
+    }
 
     /**
     * @param args the command line arguments

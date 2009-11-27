@@ -19,11 +19,16 @@ public class CalTelApp extends SingleFrameApplication {
      */
     private CalendarService calendarService;
     private ContactsService contactService;
+    private CalTelView calTelView;
+    private CalTelContactHandling calTelContactHandling;
+    private CalTelCalendarHandling calTelCalendarHandling;
+    private String username;
     @Override protected void startup() {
         /*TODO  check it*/
         this.contactService = new ContactsService("CalTel");
         this.calendarService = new CalendarService("CalTel");
-        show (new CalTelView(this));
+        this.calTelView = new CalTelView(this);
+        show (this.calTelView);
         show (new conexionwindow (this));
     }
 
@@ -58,5 +63,37 @@ public class CalTelApp extends SingleFrameApplication {
     public CalendarService getCalendarService()
       {
         return this.calendarService;
+      }
+
+    public CalTelView getCalTelView ()
+      {
+        return this.calTelView;
+      }
+
+    public CalTelContactHandling getCalTelContactHandling ()
+      {
+        return this.calTelContactHandling;
+      }
+    public CalTelCalendarHandling getCalTelCalendarHandling()
+      {
+        return this.calTelCalendarHandling;
+      }
+
+    public void setCalTelContactHandling (CalTelContactHandling _contactHandling)
+      {
+        this.calTelContactHandling = _contactHandling;
+      }
+
+    public void setCalTelCalendarHandling (CalTelCalendarHandling _calendarHandling)
+      {
+        this.calTelCalendarHandling = _calendarHandling;
+      }
+    public String getUsername ()
+      {
+        return this.username;
+      }
+    public void setUsername (String _username)
+      {
+        this.username = _username;
       }
 }
