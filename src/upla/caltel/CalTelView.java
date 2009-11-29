@@ -308,9 +308,9 @@ public class CalTelView extends FrameView {
 	    // TODO add your handling code here:
     }//GEN-LAST:event_aboutMenuItemActionPerformed
 
-    private void exitMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMenuItemMouseClicked
-	   //CalTelApp.getApplication().quit(evt);
-    }//GEN-LAST:event_exitMenuItemMouseClicked
+    private void exitMenuItemMouseClicked(java.awt.event.MouseEvent evt) {
+        System.exit(0);
+    }
 
     private void jCalendar1MouseClicked(java.awt.event.MouseEvent evt)
       {

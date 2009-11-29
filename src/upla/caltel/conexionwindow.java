@@ -8,6 +8,10 @@ package upla.caltel;
 
 import com.google.gdata.client.calendar.CalendarService;
 import com.google.gdata.client.contacts.ContactsService;
+import com.google.gdata.data.ParseSource;
+import java.io.FileInputStream;
+import java.io.File;
+
 
 public class conexionwindow extends javax.swing.JFrame {
 
@@ -33,8 +37,12 @@ public class conexionwindow extends javax.swing.JFrame {
                 acceptBtn = new java.awt.Button();
                 cancelBtn = new java.awt.Button();
                 jLabel1 = new javax.swing.JLabel();
-                jSeparator1 = new javax.swing.JSeparator();
                 passwordTxt = new javax.swing.JPasswordField();
+                contactsFilePath = new java.awt.Label();
+                contactTxt = new java.awt.TextField();
+                calendarFilePath = new java.awt.Label();
+                calendarTxt = new java.awt.TextField();
+                cargarBtn = new java.awt.Button();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                 setName("Form"); // NOI18N
@@ -77,62 +85,97 @@ public class conexionwindow extends javax.swing.JFrame {
                 jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
                 jLabel1.setName("jLabel1"); // NOI18N
 
-                jSeparator1.setName("jSeparator1"); // NOI18N
-
                 passwordTxt.setText(resourceMap.getString("passwordTxt.text")); // NOI18N
                 passwordTxt.setName("passwordTxt"); // NOI18N
+
+                contactsFilePath.setFont(resourceMap.getFont("contactsFilePath.font")); // NOI18N
+                contactsFilePath.setName("contactsFilePath"); // NOI18N
+                contactsFilePath.setText(resourceMap.getString("contactsFilePath.text")); // NOI18N
+
+                contactTxt.setFont(resourceMap.getFont("contactTxt.font")); // NOI18N
+                contactTxt.setName("contactTxt"); // NOI18N
+                contactTxt.setText(resourceMap.getString("contactTxt.text")); // NOI18N
+
+                calendarFilePath.setFont(resourceMap.getFont("calendarFilePath.font")); // NOI18N
+                calendarFilePath.setName("calendarFilePath"); // NOI18N
+                calendarFilePath.setText(resourceMap.getString("calendarFilePath.text")); // NOI18N
+
+                calendarTxt.setFont(resourceMap.getFont("calendarTxt.font")); // NOI18N
+                calendarTxt.setName("calendarTxt"); // NOI18N
+                calendarTxt.setText(resourceMap.getString("calendarTxt.text")); // NOI18N
+
+                cargarBtn.setLabel(resourceMap.getString("cargargBtn.label")); // NOI18N
+                cargarBtn.setName("cargargBtn"); // NOI18N
+                cargarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                cargarBtnMouseClicked(evt);
+                        }
+                });
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(207, Short.MAX_VALUE)
-                                .addComponent(jLabel1)
-                                .addGap(197, 197, 197))
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(399, Short.MAX_VALUE)
-                                .addComponent(acceptBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(16, 16, 16))
                         .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(52, 52, 52)
-                                                .addComponent(eventNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(192, 192, 192)
+                                                .addComponent(jLabel1))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addContainerGap()
-                                                .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(passwordTxt)
-                                        .addComponent(mailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
-                                .addGap(48, 48, 48))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addGap(182, 182, 182)
+                                                                .addComponent(cargarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(acceptBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(16, 16, 16)
+                                                                .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(contactsFilePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(eventNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(calendarFilePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGap(19, 19, 19)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(passwordTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+                                                                                        .addComponent(mailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)))
+                                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(calendarTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+                                                                                        .addComponent(contactTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))))))))
+                                .addContainerGap())
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(mailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(27, 27, 27))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(eventNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(calendarFilePath, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(calendarTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(contactsFilePath, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(contactTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(eventNameLabel, 0, 0, Short.MAX_VALUE)
+                                        .addComponent(mailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(timeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(46, 46, 46)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(cargarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(acceptBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap())
+                                        .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 );
 
                 eventNameLabel.getAccessibleContext().setAccessibleName(resourceMap.getString("eventNameLabel.AccessibleContext.accessibleName")); // NOI18N
@@ -140,6 +183,61 @@ public class conexionwindow extends javax.swing.JFrame {
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
+
+    public FileInputStream getFileStream (String filename, String type)
+      {
+        FileInputStream stream = null;
+        File file = null;
+
+        try
+          {
+            file = new File(filename);
+          }
+        catch (java.lang.NullPointerException exception)
+          {
+            System.out.println ("NullPointerException");
+          }
+        try
+          {
+            if (type == "calendar")
+                stream =  new FileInputStream (file);
+            else if (type == "contact")
+                stream = new FileInputStream (file);
+          }
+        catch (java.io.FileNotFoundException exception)
+          {
+            System.out.println (filename+" FileNotFoundException");
+          }
+        catch (java.lang.SecurityException exception)
+          {
+            System.out.println (filename + "SecurityException");
+          }
+
+        return stream;
+      }
+
+    private void cargarBtnMouseClicked(java.awt.event.MouseEvent evt) 
+      {
+        System.out.println ("Trying files...");
+
+        FileInputStream calStream = this.getFileStream (this.calendarTxt.getText(), "calendar");
+        FileInputStream contStream = this.getFileStream (this.contactTxt.getText(), "contact");
+
+        if (calStream != null)
+          {
+            System.out.println ("Calendar file seems to be valid...");
+            CalTelCalendarHandling calTelCalendarHandling = new CalTelCalendarHandling ();
+            calTelCalendarHandling.loadFile (this.app.getCalTelView(), calStream);
+          }
+        if (contStream != null)
+          {
+            System.out.println ("Contact file seems to be valid...");
+            CalTelContactHandling calTelContactHandling = new CalTelContactHandling ();
+
+            calTelContactHandling.loadFile (this.app.getCalTelView(), contStream);
+          }
+        this.hide();
+      }
 
     private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) 
       {
@@ -200,10 +298,14 @@ public class conexionwindow extends javax.swing.JFrame {
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private java.awt.Button acceptBtn;
+        private java.awt.Label calendarFilePath;
+        private java.awt.TextField calendarTxt;
         private java.awt.Button cancelBtn;
+        private java.awt.Button cargarBtn;
+        private java.awt.TextField contactTxt;
+        private java.awt.Label contactsFilePath;
         private java.awt.Label eventNameLabel;
         private javax.swing.JLabel jLabel1;
-        private javax.swing.JSeparator jSeparator1;
         private java.awt.TextField mailTxt;
         private javax.swing.JPasswordField passwordTxt;
         private java.awt.Label timeLabel;

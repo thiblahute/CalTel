@@ -7,22 +7,30 @@
 
 package upla.caltel;
 
+import org.jdesktop.application.FrameView;
+
 import com.google.gdata.client.calendar.CalendarService;
 import com.google.gdata.data.calendar.CalendarFeed;
 import com.google.gdata.data.calendar.CalendarEntry;
 import com.google.gdata.client.calendar.CalendarQuery;
 import com.google.gdata.client.calendar.CalendarQuery.ExtendedPropertyMatch;
 import com.google.gdata.data.DateTime;
-import org.jdesktop.application.FrameView;
+import com.google.gdata.data.ParseSource;
+import com.google.gdata.util.common.xml.XmlWriter;
+import com.google.gdata.data.ExtensionProfile;
 
 import java.net.URL;
-
+import java.io.FileInputStream;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.StringWriter;
+import java.io.FileWriter;
 /** 
  *  Handle evrything about calendar
  */
-public void setCalendarGui (CalTelView view, CalendarService service, String username)
-        public class CalTelCalendarHandling 
+public class CalTelCalendarHandling 
 {
+    public void setCalendarGui (CalTelView view, CalendarService service, String username)
       {
         int i;
         URL feedUrl = null;
@@ -58,10 +66,67 @@ public void setCalendarGui (CalTelView view, CalendarService service, String use
         catch (com.google.gdata.util.ServiceException exception)
           {
           }
-        for (i=0; i <calendarFeed.getEntries().size (); i++)
+
+        XmlWriter w = null;
+        ExtensionProfile feedExtension = new ExtensionProfile();
+        ExtensionProfile entryExtension = new ExtensionProfile();
+        try 
+          {
+            File userHome = (new File (System.getProperty("user.home")));
+            BufferedWriter writer = new java.io.BufferedWriter(new FileWriter (new File (userHome, "calendar.xml")));
+            w = new XmlWriter (writer);
+            calendarFeed.generateFeedStart(feedExtension, w, null);
+            for (i = 0; i < calendarFeed.getEntries().size (); i++)
+              {
+                CalendarEntry entry = calendarFeed.getEntries().get(i);
+                entry.generate(w, entryExtension);
+                calendarList.addElement ((entry.getTitle()).getPlainText());
+              }
+
+            /* We close the feed hand write it to the local file*/
+            calendarFeed.generateFeedEnd (w);
+            writer.write(writer.toString());
+          }
+        catch (java.io.IOException exception)
+          {
+            System.out.println ("java.io.IOException");
+          }
+
+        /*System.out.println (writer.toString());*/
+
+      ;}
+
+    void loadFile (CalTelView view,  FileInputStream calStream)
+      {
+        int i;
+        CalendarFeed calendarFeed = new CalendarFeed();
+        javax.swing.DefaultListModel calendarList = view.getDayEventsList ();
+
+        try
+          {
+            /*calendarFeed.readFeed (xmlParsing);*/
+            ExtensionProfile feedExtension = new ExtensionProfile();
+            calendarFeed.parseAtom (feedExtension,calStream);
+          }   
+        catch (java.io.IOException exception)
+          {
+            System.out.println ("java.io.IOException");
+          }
+        catch (com.google.gdata.util.ParseException exception)
+          {
+            System.out.println ("com.google.gdata.util.ParseException");
+          }
+        catch (com.google.gdata.util.ServiceException exception)
+          {
+            System.out.println ("com.google.gdata.util.ServiceException");
+          }
+        System.out.println ("Entris NB:"+calendarFeed.getEtag() );
+        for (i = 0; i < calendarFeed.getEntries().size (); i++)
           {
             CalendarEntry entry = calendarFeed.getEntries().get(i);
+            System.out.println (entry.getTitle().getPlainText());
             calendarList.addElement ((entry.getTitle()).getPlainText());
           }
+
       }
 }

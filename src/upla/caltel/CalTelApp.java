@@ -24,7 +24,10 @@ public class CalTelApp extends SingleFrameApplication {
     private CalTelContactHandling calTelContactHandling;
     private CalTelCalendarHandling calTelCalendarHandling;
     private String username;
+    private String contactFileName;
+
     @Override protected void startup() {
+        System.out.println (System.getProperty("user.home"));
         this.contactService = new ContactsService("CalTel");
         this.calendarService = new CalendarService("CalTel");
         this.calTelView = new CalTelView(this);
@@ -47,6 +50,7 @@ public class CalTelApp extends SingleFrameApplication {
     public static CalTelApp getApplication() {
         return Application.getInstance(CalTelApp.class);
     }
+
 
     /**
      * Main method launching the application.

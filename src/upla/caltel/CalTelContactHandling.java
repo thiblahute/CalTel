@@ -12,8 +12,16 @@ import com.google.gdata.data.contacts.ContactGroupFeed;
 import com.google.gdata.data.contacts.ContactGroupEntry;
 import com.google.gdata.data.contacts.ContactFeed;
 import com.google.gdata.data.contacts.ContactEntry;
+import com.google.gdata.data.ParseSource;
+import com.google.gdata.util.common.xml.XmlWriter;
+import com.google.gdata.data.ExtensionProfile;
 
 import java.net.URL;
+import java.io.FileInputStream;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.StringWriter;
+import java.io.FileWriter;
 
 public class CalTelContactHandling 
 {
@@ -72,7 +80,34 @@ public class CalTelContactHandling
         contactFeed.declareExtensions (service.getExtensionProfile ());
         try
           {
+            XmlWriter w = null;
+
             contactFeed =  service.getFeed(feedUrl, ContactFeed.class);
+
+            /* file writing necessary */
+            ExtensionProfile feedExtension = new ExtensionProfile();
+            ExtensionProfile entryExtension = new ExtensionProfile();
+
+            File userHome = (new File (System.getProperty("user.home")));
+            BufferedWriter writer = new java.io.BufferedWriter(new FileWriter (new File (userHome, "contacts.xml")));
+            w = new XmlWriter (writer);
+            contactFeed.generateFeedStart(feedExtension, w, null);
+
+            for (i=0; i <contactFeed.getEntries().size (); i++)
+              {
+                ContactEntry entry = contactFeed.getEntries().get(i);
+                entry.generate(w, entryExtension);
+                String email = null;
+                if (entry.getEmailAddresses().size()>0)
+                    email = " "+entry.getEmailAddresses().get(0).getAddress();
+                else 
+                  email = "";
+                contactList.addElement ((entry.getTitle()).getPlainText()+email);
+              }
+           
+            /* We close the feed hand write it to the local file*/
+            contactFeed.generateFeedEnd (w);
+            writer.write(writer.toString());
           }
         catch (java.net.MalformedURLException exception)
           {
@@ -83,14 +118,41 @@ public class CalTelContactHandling
         catch (com.google.gdata.util.ServiceException exception)
           {
           }
+      }
+    
+    void loadFile (CalTelView view,  FileInputStream contactStream)
+      {
+        int i;
+        ParseSource xmlParsing = new ParseSource (contactStream);
+        ContactFeed contactFeed = new ContactFeed();
+        javax.swing.DefaultListModel contactList = view.getContactList ();
+
+        try
+          {
+            ExtensionProfile feedExtension = new ExtensionProfile();
+            contactFeed.parseAtom (feedExtension, contactStream);
+          }   
+        catch (java.io.IOException exception)
+          {
+            System.out.println ("java.io.IOException");
+          }
+        catch (com.google.gdata.util.ParseException exception)
+          {
+            System.out.println ("com.google.gdata.util.ParseException");
+          }
+        catch (com.google.gdata.util.ServiceException exception)
+          {
+            System.out.println ("com.google.gdata.util.ServiceException");
+          }
+
         for (i=0; i <contactFeed.getEntries().size (); i++)
           {
             ContactEntry entry = contactFeed.getEntries().get(i);
             String email = null;
             if (entry.getEmailAddresses().size()>0)
-                email = " "+entry.getEmailAddresses().get(0).getAddress();
+              email = " "+entry.getEmailAddresses().get(0).getAddress();
             else 
-                email = "";
+              email = "";
             contactList.addElement ((entry.getTitle()).getPlainText()+email);
           }
       }
