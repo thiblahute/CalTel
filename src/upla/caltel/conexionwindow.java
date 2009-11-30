@@ -13,7 +13,11 @@ import java.io.FileInputStream;
 import java.io.File;
 
 
-public class conexionwindow extends javax.swing.JFrame {
+/**
+ * Permit to ask for connexion informations or calTel path depending if we are working online or offline
+ */
+public class conexionwindow extends javax.swing.JFrame 
+{
 
     private CalTelApp app;
     /** Creates new form addEvent */
@@ -192,17 +196,14 @@ public class conexionwindow extends javax.swing.JFrame {
         try
           {
             file = new File(filename);
-          }
-        catch (java.lang.NullPointerException exception)
-          {
-            System.out.println ("NullPointerException");
-          }
-        try
-          {
             if (type == "calendar")
                 stream =  new FileInputStream (file);
             else if (type == "contact")
                 stream = new FileInputStream (file);
+          }
+        catch (java.lang.NullPointerException exception)
+          {
+            System.out.println ("NullPointerException");
           }
         catch (java.io.FileNotFoundException exception)
           {
@@ -216,6 +217,11 @@ public class conexionwindow extends javax.swing.JFrame {
         return stream;
       }
 
+    /**
+     * CargarBtn callback, it actually load the xml files and call CalTelCalendarHandling :: loadFile 
+     * and CalTelContactHandling :: loadFile.
+     * @param evt the mouse event
+     * */
     private void cargarBtnMouseClicked(java.awt.event.MouseEvent evt) 
       {
         System.out.println ("Trying files...");
@@ -247,7 +253,13 @@ public class conexionwindow extends javax.swing.JFrame {
       {
       }
 
-    private void acceptBtnMouseClicked(java.awt.event.MouseEvent evt) {
+    /**
+     *  Permit to connect to google server getting information from the textBox and passwordBox
+     *  and call CalTelCalendarHandling::setCalendarGui and CalTelContactHandling::setContactGui
+     *  @param evt the mouseClick event
+     * */
+    private void acceptBtnMouseClicked(java.awt.event.MouseEvent evt) 
+      {
         boolean connected = true;
         String userName = this.mailTxt.getText();
         char[] password = this.passwordTxt.getPassword ();

@@ -10,14 +10,16 @@ package upla.caltel;
 import org.jdesktop.application.FrameView;
 
 import com.google.gdata.client.calendar.CalendarService;
-import com.google.gdata.data.calendar.CalendarFeed;
-import com.google.gdata.data.calendar.CalendarEntry;
 import com.google.gdata.client.calendar.CalendarQuery;
 import com.google.gdata.client.calendar.CalendarQuery.ExtendedPropertyMatch;
+
+import com.google.gdata.data.calendar.CalendarFeed;
+import com.google.gdata.data.calendar.CalendarEntry;
 import com.google.gdata.data.DateTime;
 import com.google.gdata.data.ParseSource;
-import com.google.gdata.util.common.xml.XmlWriter;
 import com.google.gdata.data.ExtensionProfile;
+
+import com.google.gdata.util.common.xml.XmlWriter;
 
 import java.net.URL;
 import java.io.FileInputStream;
@@ -30,6 +32,12 @@ import java.io.FileWriter;
  */
 public class CalTelCalendarHandling 
 {
+    /**
+     *  Gets the calendar internet and add it to calendarList.
+     *  @param service the ContactService which permit to do server's requests
+     *  @param view the main gui of the calTel in order to the calendar to it.
+     *  @param username the  username of the person for whose calendar we are looking for
+     * */
     public void setCalendarGui (CalTelView view, CalendarService service, String username)
       {
         int i;
@@ -96,6 +104,11 @@ public class CalTelCalendarHandling
 
       ;}
 
+    /**
+     * load the file passed as parameter and show the contained calendar in the main GUI
+     * @param view the main Gui where to add the calendar
+     * @param calStream the FileInputStream containing the xml data
+     * */
     void loadFile (CalTelView view,  FileInputStream calStream)
       {
         int i;

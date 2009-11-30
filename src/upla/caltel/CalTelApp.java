@@ -26,6 +26,9 @@ public class CalTelApp extends SingleFrameApplication {
     private String username;
     private String contactFileName;
 
+    /**
+     * Shows the connection window and the CalTelView and sets a few attributes
+     * */
     @Override protected void startup() {
         System.out.println (System.getProperty("user.home"));
         this.contactService = new ContactsService("CalTel");
@@ -59,21 +62,37 @@ public class CalTelApp extends SingleFrameApplication {
         launch(CalTelApp.class, args);
     }
 
+    /**
+     * Service accesor
+     * @return the ContactService attribute
+     * */
     public ContactsService getContactService()
       {
         return this.contactService;
       }
 
+    /**
+     * Service accesor
+     * @return the calendarService attribute
+     * */
     public CalendarService getCalendarService()
       {
         return this.calendarService;
       }
 
+    /**
+     * calTelView accesor
+     * @return the calTelView attribute
+     * */
     public CalTelView getCalTelView ()
       {
         return this.calTelView;
       }
 
+    /**
+     * calTelContactHandling accesor
+     * @return the CalTelContactHandling attribute
+     * */
     public CalTelContactHandling getCalTelContactHandling ()
       {
         return this.calTelContactHandling;
@@ -83,15 +102,28 @@ public class CalTelApp extends SingleFrameApplication {
         return this.calTelCalendarHandling;
       }
 
+    /**
+     * calTelContactHandling seter
+     * @param _contactHandling the CalTelContactHandling to set 
+     * */
     public void setCalTelContactHandling (CalTelContactHandling _contactHandling)
       {
         this.calTelContactHandling = _contactHandling;
       }
 
+    /**
+     * calTelCalendarHandling seter
+     * @param _calendarHandling the CalTelCalendarHandling to set 
+     * */
     public void setCalTelCalendarHandling (CalTelCalendarHandling _calendarHandling)
       {
         this.calTelCalendarHandling = _calendarHandling;
       }
+
+    /**
+     * Username accesor
+     * @return the username
+     * */
     public String getUsername ()
       {
         return this.username;
